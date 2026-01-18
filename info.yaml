@@ -1,49 +1,47 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
-  wokwi_id:     0       # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  wokwi_id:     453362613653909505       # Set this to the ID of your Wokwi project
+  title:        "C Compiler Chip"        # Project title
+  author:       "LazerKat"               # Your name
+  discord:      "renderlightstudios"     # Your discord username
+  description:  "ILI9341 Display - Runs program.c from SD Card"  # Updated description
+  language:     "Wokwi"                  # Using Wokwi simulation
+  clock_hz:     0                        # No external clock needed
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  # How many tiles your design occupies
+  tiles: "1x1"                           # Single tile design
 
-
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+# The pinout of your project - Mapped to match your chip.c and chip.json
 pinout:
-  # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  # Inputs - UI pins from Tiny Tapeout
+  ui[0]: "VCC"            # Display VCC
+  ui[1]: "GND"            # Display GND
+  ui[2]: "CS"             # Display Chip Select
+  ui[3]: "RST"            # Display Reset
+  ui[4]: "DC"             # Display Data/Command
+  ui[5]: "MOSI"           # Display MOSI (Master Out Slave In)
+  ui[6]: "SCK"            # Display SPI Clock
+  ui[7]: "LED"            # Display Backlight LED
 
-  # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  # Outputs - UO pins from Tiny Tapeout
+  uo[0]: "MISO"           # Display MISO (Master In Slave Out)
+  uo[1]: "SD_CS"          # SD Card Chip Select
+  uo[2]: "SD_DI"          # SD Card Data In (MOSI)
+  uo[3]: "SD_DO"          # SD Card Data Out (MISO)
+  uo[4]: "SD_SCK"         # SD Card SPI Clock
+  uo[5]: "SD_CD"          # SD Card Detect (Card Present)
+  uo[6]: ""               # Available
+  uo[7]: ""               # Available
 
-  # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  # Bidirectional pins - UIO pins from Tiny Tapeout
+  uio[0]: "COMPILE_BUTTON"  # Button to compile/run program.c
+  uio[1]: ""               # Available
+  uio[2]: ""               # Available
+  uio[3]: ""               # Available
+  uio[4]: ""               # Available
+  uio[5]: ""               # Available
+  uio[6]: ""               # Available
+  uio[7]: ""               # Available
 
 # Do not change!
 yaml_version: 6
